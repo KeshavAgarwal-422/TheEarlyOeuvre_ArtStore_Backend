@@ -1,4 +1,4 @@
-const Instance = require("../app");
+require("dotenv").config();
 const crypto = require("crypto");
 const RazorPay = require("razorpay");
 const Payment = require("../Models/PaymentModel.js");
