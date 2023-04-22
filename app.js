@@ -5,6 +5,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 5001;
+const FRONTEND_URL = process.env.FRONTEND_URL;
 const ProductRouter = require("./Routes/ProductRoutes");
 const OrderRouter = require("./Routes/OrderRoutes");
 const PaymentRouter = require("./Routes/PaymentRoutes");
@@ -13,7 +14,8 @@ const errorMiddleware = require("./Middleware/Error");
 const app = express();
 
 const corsOptions = {
-  origin: "https://theearlyoeuvre.netlify.app/",
+  origin: FRONTEND_URL,
+
   credentials: true,
 };
 app.use(cors(corsOptions));

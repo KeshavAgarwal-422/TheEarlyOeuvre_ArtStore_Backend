@@ -4,6 +4,7 @@ const sendToken = require("../Utils/jwtToken");
 const ErrorHandler = require("../Utils/ErrorHandler");
 const sendEmail = require("../Utils/SendEmail.js");
 const crypto = require("crypto");
+const FRONTEND_URL = process.env.FRONTEND_URL;
 
 const signUp = catchAsyncErrors(async (req, res, next) => {
   const user = await User.create(req.body);
@@ -43,7 +44,7 @@ const forgetPassword = catchAsyncErrors(async (req, res, next) => {
 
   await user.save({ validateBeforeSave: false });
 
-  const resetPasswordUrl = `https://theearlyoeuvre.netlify.app/resetpassword/${resetToken}`;
+  const resetPasswordUrl = `${FRONTEND_URL}resetpassword/${resetToken}`;
 
   const message = `Your password reset token is :- \n\n ${resetPasswordUrl} \n\nIf you have not requested this email then, please ignore it.`;
 
