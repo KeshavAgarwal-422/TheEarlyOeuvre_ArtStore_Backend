@@ -17,6 +17,9 @@ const corsOptions = {
   origin: FRONTEND_URL,
 
   credentials: true,
+  headers: {
+    "Access-Control-Allow-Origin": FRONTEND_URL,
+  },
 };
 app.use(cors(corsOptions));
 
