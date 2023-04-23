@@ -13,16 +13,24 @@ const UserRouter = require("./Routes/UserRoutes");
 const errorMiddleware = require("./Middleware/Error");
 const app = express();
 
-const corsOptions = {
-  origin: FRONTEND_URL,
+// const corsOptions = {
+//   origin: FRONTEND_URL,
 
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-  methods: ["GET", "PUT", "POST", "DELETE"], //HTTP verbs allowed
-  allowedHeaders: ["Content-Type", "Authorization"], //only allow these headers
-  exposedHeaders: ["Content-Length", "X-Foo", "X-Bar"], //headers exposed to the browser
-  credentials: true, //allow cookies to be sent with the request
-};
-app.use(cors(corsOptions));
+//   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 20
+//   credentials: true, //allow cookies to be sent with the request
+// };
+
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  next();
+});
+app.use(cors());
 
 app.use(express.json());
 
