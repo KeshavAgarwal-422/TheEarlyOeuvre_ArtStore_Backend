@@ -19,6 +19,6 @@ At TheEarlyOeuvre, we take great pride in the quality of our artworks and the sa
 
 ## Contact Us
 
-If you have any questions or comments about TheEarlyOeuvre, please feel free to contact us at [insert email address]. We are always happy to hear from our customers and help in any way we can.
+If you have any questions or comments about TheEarlyOeuvre, please feel free to contact us at theearlyoeuvre@gmail.com. We are always happy to hear from our customers and help in any way we can.
 
 Thank you for choosing TheEarlyOeuvre. We hope you enjoy browsing our collection of beautiful artworks and find the perfect piece to add to your collection.
