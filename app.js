@@ -16,10 +16,11 @@ const app = express();
 const corsOptions = {
   origin: FRONTEND_URL,
 
-  credentials: true,
-  headers: {
-    "Access-Control-Allow-Origin": FRONTEND_URL,
-  },
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  methods: ["GET", "PUT", "POST", "DELETE"], //HTTP verbs allowed
+  allowedHeaders: ["Content-Type", "Authorization"], //only allow these headers
+  exposedHeaders: ["Content-Length", "X-Foo", "X-Bar"], //headers exposed to the browser
+  credentials: true, //allow cookies to be sent with the request
 };
 app.use(cors(corsOptions));
 
