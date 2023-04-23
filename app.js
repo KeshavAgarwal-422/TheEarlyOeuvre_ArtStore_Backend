@@ -32,10 +32,10 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true })); //use this for receiving payment
 
-app.use("/product", ProductRouter);
-app.use("/order", OrderRouter);
-app.use("/payment", PaymentRouter);
-app.use("/user", UserRouter);
+app.use("/api/product", ProductRouter);
+app.use("/api/order", OrderRouter);
+app.use("/api/payment", PaymentRouter);
+app.use("/api/user", UserRouter);
 
 app.use(errorMiddleware);
 
