@@ -32,13 +32,12 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true })); //use this for receiving payment
 
-app.use("/api/product", ProductRouter);
-app.use("/api/order", OrderRouter);
-app.use("/api/payment", PaymentRouter);
-app.use("/api/user", UserRouter);
+app.use(`${FRONTEND_URL}/api/product`, ProductRouter);
+app.use(`${FRONTEND_URL}/api/order`, OrderRouter);
+app.use(`${FRONTEND_URL}/api/payment`, PaymentRouter);
+app.use(`${FRONTEND_URL}/api/user`, UserRouter);
 
 app.use(errorMiddleware);
-
 mongoose
   .connect(process.env.MONGOURI)
   .then(() => {
